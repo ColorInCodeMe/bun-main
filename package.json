@@ -1,0 +1,65 @@
+{
+  "name": "bun-bp-cic-clone",
+  "version": "0.0.1",
+  "author": "Color in Code",
+  "module": "./app.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun run dev.ts",
+    "start": "bun --watch ./src/ts/app.ts",
+    "clear-dist": "rimraf --glob dist/*",
+    "clear-prod": "rimraf --glob prod/*",
+    "clean": "npm run clear-dist && npm run clear-prod",
+    "lint": "bun biome start && bun biome lint --write .",
+    "lint-prod": "stylelint --config '.stylelintrc' --allow-empty-input  \"dist/**/*.css\"",
+    "format": "bun biome format --write .",
+    "prod": "bun run prod.ts"
+  },
+  "prettier": "@stylelint/prettier-config",
+  "eslintConfig": {
+    "extends": [
+      "stylelint"
+    ]
+  },
+  "stylelint": {
+    "extends": "stylelint"
+  },
+  "devDependencies": {
+    "@stylelint/prettier-config": "^3.0.0",
+    "@biomejs/biome": "1.9.2",
+    "@types/bun": "^1.1.16",
+    "@types/node": "^22.10.5",
+    "bun-lightningcss": "^0.2.0",
+    "eslint": "^8.57.1",
+    "eslint-config-stylelint": "^22.0.0",
+    "postcss": "^8.4.49",
+    "postcss-custom-properties": "^14.0.4",
+    "postcss-import": "^16.1.0",
+    "postcss-modules": "^6.0.1",
+    "postcss-nested": "^6.2.0",
+    "rimraf": "^6.0.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@types/gsap": "^3.0.0",
+    "@types/websocket": "^1.0.10",
+    "browserslist": "^4.24.4",
+    "bun-image-transform": "^1.1.3",
+    "glob": "^11.0.1",
+    "gsap": "^3.12.5",
+    "lightningcss": "^1.29.1",
+    "posthtml": "^0.16.6",
+    "posthtml-include": "^2.0.1",
+    "prettier": "^3.4.2",
+    "sass": "^1.83.1",
+    "sharp": "^0.33.5",
+    "stylelint": "^16.13.0",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-recommended": "^14.0.1",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-prettier": "^5.0.2"
+  }
+}
